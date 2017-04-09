@@ -26,10 +26,11 @@
 # 9	45	54
 # 10 50	60
 
-a = int(input())
-b = int(input())
-c = int(input())
-d = int(input())
+# a = int(input()) # Заменено на FOR
+# b = int(input())
+# c = int(input())
+# d = int(input())
+a, b, c, d = (int(input()) for i in range(4))
 string = ''
 for x in range(c, d + 1):
     string += '\t' + str(x)
@@ -37,6 +38,5 @@ print(string)
 for k in range(a, b + 1):
     string = str(k)
     for i in range(c, d + 1):
-        string += '\t' + str(i*k)
+        string += '\t' + str(i * k)
     print(string)
-
