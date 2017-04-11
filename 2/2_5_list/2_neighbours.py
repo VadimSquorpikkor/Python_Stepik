@@ -19,6 +19,23 @@
 # Sample Output 2:
 # 10
 
+"""res = [int(x) for x in input().split()]
+stroke = ''
+if len(res) == 1:
+    stroke = str(res[0])
+else:
+    res.append(res[0])
+    res.insert(0, res[-2])
+    for x in range(1, len(res) - 1):
+        stroke += str(res[x - 1] + res[x + 1]) + ' '
+print(stroke)"""
+
+
 res = [int(x) for x in input().split()]
-summ = 0
-# for x in
+stroke = ''
+if len(res) == 1:
+    stroke = str(res[0])
+else:
+    for x in range(0, len(res)):
+        stroke += str(res[x - 1] + res[x - len(res) + 1]) + ' '
+print(stroke)
