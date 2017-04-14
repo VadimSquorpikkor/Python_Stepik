@@ -14,25 +14,33 @@
 # 14 23 22 21 8
 # 13 12 11 10 9
 
-n = int(5)
-matrix = [[0]*n for i in range(n)]
-print(matrix)
-startX = int(0)
-startY = int(0)
-stopX = int(n)
-stopY = int(n)
-stepX = int(1)
-stepY = int(1)
+n = int(input())
+matrix = [[0] * n for i in range(n)]
+stopUp = int(n)
+stopDown = int(-1)
 count = 1
 x = 0
 y = 0
-while True:
-    for y in range(startY, stopY, stepY):
-        matrix[x][y] = count
+while count <= n ** 2:
+    for x in range(x, stopUp):  # 0-4
+        matrix[y][x] = count
         count += 1
-    stepY = -1
-    startY = stopX - 1
-    stopY = startX + 1
-
-
-print(matrix)
+    y += 1
+    for y in range(y, stopUp):
+        matrix[y][x] = count
+        count += 1
+    x -= 1
+    for x in range(x, stopDown, -1):
+        matrix[y][x] = count
+        count += 1
+    y -= 1
+    stopDown += 1
+    for y in range(y, stopDown, -1):
+        matrix[y][x] = count
+        count += 1
+    x += 1
+    stopUp -= 1
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')  # would set end='\t'
+    print('')
