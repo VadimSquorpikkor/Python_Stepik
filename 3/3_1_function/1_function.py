@@ -24,13 +24,13 @@
 # Sample Output 3:
 # -0.5
 
-'''def fun1(x):
-    float(res) = x
+
+def fun1(x):
     if x <= -2:
         return 1 - (x + 2) ** 2
     if x > 2:
-        return ((x − 2) ** 2) + 1
+        return 1 + (x - 2) ** 2
     else:
-        return -(x/2)
-'''
+        return -(x / 2)
 
+# print(fun1(input()))
