@@ -32,7 +32,16 @@ y = int(0)
 
 n = int(input())
 
-# dict = {}
-# for i in range(n):
-#
-#     if i in dict:
+for i in range(n):
+    direction, distance = input().split()
+    if direction == 'север':
+        y += int(distance)
+    elif direction == 'юг':
+        y -= int(distance)
+    elif direction == 'восток':
+        x += int(distance)
+    elif direction == 'запад':
+        x -= int(distance)
+    else:
+        print('You stupid dumb shit goddamn motherfucker!')
+print(x, y)
