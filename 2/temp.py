@@ -2,9 +2,15 @@
 # for i in res:
 #     print(i)
 # print(res)
+##############
+# import math
+#
+# print(math.pi)
 
-import math
+import requests
 
-print(math.pi)
+r = requests.get('http://example.com')
+print(r.text)
+
 
 
