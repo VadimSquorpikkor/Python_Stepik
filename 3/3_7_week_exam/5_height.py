@@ -33,9 +33,6 @@
 # 9 -
 # 10 -
 # 11 172.0
-import re
-
-import sys
 
 pupil_list = {'1': '-', '2': '-', '3': '-', '4': '-', '5': '-',
               '6': '-', '7': '-', '8': '-', '9': '-', '10': '-',
@@ -43,15 +40,12 @@ pupil_list = {'1': '-', '2': '-', '3': '-', '4': '-', '5': '-',
 print(pupil_list)
 with open('5_input_file.txt') as in_file:
     for line in in_file:
-        stroke = in_file.readline()  # remove the name
-        print(stroke)
-        # stroke = re.findall(r'[0-9]+', stroke)  # remove the name
-        # print(stroke)
-        # class_num = stroke[0]
-        # height = int(stroke[1])
-        # if pupil_list[class_num] == '-':
-        #     pupil_list[class_num] = height
-        # else:
-        #     pupil_list[class_num] += height
+        if line != '\n':
+            class_num, name, height = line.strip().split()
+            print(class_num, name, height)
+            if pupil_list[class_num] == '-':
+                pupil_list[class_num] = [int(height)]
+            else:
+                pupil_list[class_num] += [int(height)]
 
 print(pupil_list)
